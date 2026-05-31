@@ -19,7 +19,7 @@ const targets = [
         args: ["-c:a", "libvorbis", "-qscale:a", "5"],
     },
     { platform: "ios", ext: "m4a", args: ["-c:a", "aac", "-b:a", "128k"] },
-    { platform: "web", ext: "ogg", args: ["-c:a", "libopus", "-b:a", "96k"] },
+    { platform: "web", ext: "opus", args: ["-c:a", "libopus", "-b:a", "96k"] },
 ];
 
 const inputs = readdirSync(IN_DIR).filter((f) => f.endsWith(".wav"));
