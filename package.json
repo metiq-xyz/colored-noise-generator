@@ -1,0 +1,38 @@
+{
+  "name": "metiq-noise-generator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Generates seamless colored noise loops (white, pink, brown, grey) as WAV. Run ffmpeg afterward to encode to OGG/AAC per platform.",
+  "scripts": {
+    "generate": "node ./scripts/generate.js",
+    "normalize": "node ./scripts/normalize.js",
+    "encode": "node ./scripts/encode.js",
+    "build": "pnpm run generate && pnpm run normalize && pnpm run encode",
+    "lint": "eslint .",
+    "format": "eslint --fix .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^9.34.0",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.7",
+    "prettier": "^3.6.2",
+    "wavefile": "^11.0.0"
+  }
+}
